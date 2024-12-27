@@ -1,0 +1,16 @@
+.tasks--list--container{
+  padding: 20px 0;
+  border-bottom: 2px solid grey;
+  .task--container {
+    background-color: rgb(92, 150, 158);
+    padding: 15px;
+    strong {
+      font-size: 32px;
+    }
+  }
+  .task--cta{
+    display: flex;
+    gap: 20px;
+  }
+}
+
