@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "./index.scss";
 import Comment from "../Comment";
+import {useNavigate} from "react-router-dom"
 import TaskService from "../../api/task";
 const Task = ({ id, title, description, assigned_to, status }) => {
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
   const [comments, setComments] = useState([]);
   const [hideComments,setHideComments] =useState(true)
-
+  const navigate = useNavigate();
   const createComment = async () => {
     setLoading(true);
     await TaskService.createTaskComment(id, { user: "Sebastian", comment });
-    window.location.reload();
+    navigate(0)
   };
 
   const showComments = async () => {
@@ -27,7 +28,7 @@ const Task = ({ id, title, description, assigned_to, status }) => {
 
   const changeStatus = async () => {
     await TaskService.changeTaskStatus(id);
-    window.location.reload();
+    navigate(0)
   };
 
   return (
