@@ -40,24 +40,25 @@ const HomePage = () => {
 
   console.log({ taskForm });
   return (
-    <div>
+    <div className="container">
       {showMessage && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          backgroundColor: '#4CAF50',
-          color: 'white',
-          padding: '15px',
-          borderRadius: '5px',
-          boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
-        }}>
+        <div
+          style={{
+            position: "fixed",
+            top: "20px",
+            right: "20px",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            padding: "15px",
+            borderRadius: "5px",
+            boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+          }}
+        >
           ¡Tarea creada exitosamente!
-          Se enviara un correo de confirmacion!
         </div>
       )}
       <h1>Crear tarea</h1>
-      <h2>Titulo</h2>
+      <h2>Título</h2>
       <input
         type="text"
         name="title"
@@ -66,7 +67,7 @@ const HomePage = () => {
       ></input>
       <h2>Descripción</h2>
       <textarea name="description" onChange={(e) => handleChange(e)}></textarea>
-
+  
       <h2>Asignado</h2>
       <input
         type="text"
@@ -85,5 +86,4 @@ const HomePage = () => {
     </div>
   );
 };
-
 export default HomePage;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Task from "../../components/Task";
 import "./index.scss";
 import TaskService from "../../api/task";
+
 const TasksPage = () => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,31 +17,30 @@ const TasksPage = () => {
     getTasks();
   }, []);
 
+  console.log({tasks})
+
   return (
-    <>
-      <h1>Lista de tareas</h1>
-      <div className="task--page--container">
-    
-    {loading
-      ? "Cargando tareas..."
-      : tasks &&
-        tasks.map((task) => {
-          return (
+    <div className="tasks-page-container">
+      <h1 className="tasks-page-title">Lista de tareas</h1>
+      <div className="task-page-content">
+        {loading ? (
+          <p className="loading-text">Cargando tareas...</p>
+        ) : (
+          tasks &&
+          tasks.sort((a,b)=>b.id - a.id) .map((task) => (
             <Task
               id={task.id}
               assigned_to={task.assigned_to}
-              // comments={task.comments}
               description={task.description}
               title={task.title}
               status={task.status}
               key={task.id}
             />
-          );
-        })}
-  </div>
-    </>
-
+          ))
+        )}
+      </div>
+    </div>
   );
 };
 
-export default TasksPage
+export default TasksPage;

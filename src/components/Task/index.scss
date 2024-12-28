@@ -1,16 +1,96 @@
-.tasks--list--container{
-  padding: 20px 0;
-  border-bottom: 2px solid grey;
-  .task--container {
-    background-color: rgb(92, 150, 158);
-    padding: 15px;
-    strong {
-      font-size: 32px;
-    }
-  }
-  .task--cta{
-    display: flex;
-    gap: 20px;
-  }
+.tasks--list--container {
+  margin: 1rem auto; /* Asegura un espaciado uniforme desde el borde superior */
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo del contenedor */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaciado entre tareas */
+  padding: 1rem;
+}
+.task--list--comments{
+  gap: 5px;
+  flex-direction: column;
+}
+.task--container {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
+.task--container strong {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.task--container p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.2rem 0;
+}
+
+.task--container span {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+textarea {
+  margin-top: 1rem;
+  width: 100%;
+  height: 80px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+.task--cta {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.task--cta button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.task--cta button:hover {
+  background-color: #45a049;
+}
+
+.task--cta button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .tasks--list--container {
+    padding: 0.5rem;
+  }
+
+  .task--container {
+    padding: 1rem;
+  }
+
+  .task--cta {
+    flex-direction: column;
+  }
+}

@@ -15,6 +15,8 @@ const Task = ({ id, title, description, assigned_to, status }) => {
     navigate(0)
   };
 
+
+
   const showComments = async () => {
     if (hideComments){
       const data = await TaskService.getCommentsByTask(id);
@@ -39,7 +41,7 @@ const Task = ({ id, title, description, assigned_to, status }) => {
         <span>Asignado a: {assigned_to || "Nadie"}</span>
         <p>Estado:{status || "Por ver"} </p>
       </div>
-      <div style={{display:hideComments?"none":"block"}} >
+      <div  className="task--list--comments" style={{display:hideComments?"none":"flex"}} >
       {comments &&
         comments.map((comment) => {
           return (

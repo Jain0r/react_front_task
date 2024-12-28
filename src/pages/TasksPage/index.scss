@@ -1,12 +1,29 @@
-.task--page--container {
-display: grid;
-width: 100%;
-max-width: 1100px;
-margin: auto;
-grid-template-columns: 1fr;
-  textarea {
-    resize: none;
-    width: 100%;
-    height: 50px;
-  }
+.tasks-page-container {
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Espaciado en la parte superior e inferior */
+  max-width: 1200px; /* Limita el ancho de la página */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  box-sizing: border-box;
+}
+
+.tasks-page-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem; /* Espaciado debajo del título */
+  text-align: center;
+  color: #333;
+}
+
+.task-page-content {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaciado entre tareas */
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
 }
